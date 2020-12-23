@@ -71,33 +71,30 @@ def strategy_tester(nums_of_runs, times_to_bet, initial_money, betsize_percentag
     lower_quartile_value = sorted_list[round(nums_of_runs * 0.25)]
     upper_quartile_value = sorted_list[round(nums_of_runs * 0.75)]
     ninety_five_percent_low = sorted_list[round(nums_of_runs * 0.05)]
-    stat_list = [average, standard_deviance, lower_quartile_value, upper_quartile_value, ninety_five_percent_low,
-                 min(strategy_result_list), max(strategy_result_list), strategy_result_list]
-    print(round
-    num
-    for num in strategy_result_list)
+    stat_list = [average, standard_deviance, lower_quartile_value, upper_quartile_value, ninety_five_percent_low, min(strategy_result_list), max(strategy_result_list), strategy_result_list]
     return (stat_list)
 
 
-strategy_tester(100, 1000, 1000, 0.05)
+
 
 
 # Maximise this function with respect to the lower quartile value, using the bet_size_percentage as input parameter.
 
 def plot_result():
     from matplotlib import pyplot as plt
-    strategy_result_list = strategy_tester(100, 1000, 1000, 0.01)[7]
-    plt.plot(strategy_result_list)
+    j = 0
+    for i in range(1, 10, 1):
+        j += 1
+        stat_list = strategy_tester(100, 1000, 1, i*0.01)
+        strategy_result_list = stat_list[7]
+        #plt.plot(strategy_result_list)
+        #plt.plot([x for x in range(100)], [1 for x in range(100)])
+
+        plt.subplot((430+j))
+        plt.plot([num for num in range(100)], strategy_result_list)
+
     plt.show()
 
 
 plot_result()
 
-"""
-#def strategy_chooser():
- #   strategies_result = []
-  #  for i in range (0.01,0.5, 0.01):
-   #     stat_list = strategy_tester(100, 1000, 1000, i)
-    #    strategies_result.append(stat_list)
-    #for element in strategies_result:
-   """
