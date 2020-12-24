@@ -59,10 +59,10 @@ def strategy_tester(nums_of_runs, times_to_bet, initial_money, betsize_percentag
     return strategy_result_list
 
 #Isn't used anywhere right now, but is interesting to look at in combination with the plots in deciding the best strategy.
-def stat_maker(strategy_result_list):
+def stat_maker(strategy_result_list, nums_of_runs):
     average = 0
-    for element in strategy_result_list:
-        average += element
+    for i in range(len(strategy_result_list)):
+        average += strategy_result_list[i]
     average = average / nums_of_runs
     variance = 0
     for element in strategy_result_list:
@@ -79,17 +79,38 @@ def stat_maker(strategy_result_list):
 
 #Plotting different strategies and plotting the end money sums against eachother and internally against the baseline/
 #initial money at hand to compare how efficient the strategies are.
-def plot_result():
+def plot_result(nums_of_runs, strategies_list, nums_of_strategies):
     from matplotlib import pyplot as plt
-    j = 0
-    for i in range(1, 10, 1):
-        j += 1
-        strategy_result_list = strategy_tester(100, 3650, 1, i*0.02)
-        plt.plot([x for x in range(100)], [1 for x in range(100)])
+    for i in range(nums_of_strategies):
+        strat_list = strategies_list[i]
+        average = stat_maker(strat_list, nums_of_runs)[0]
+
         plt.yscale("log")
-        plt.subplot((430+j))
-        plt.plot([num for num in range(100)], strategy_result_list)
+        plt.plot([x for x in range(nums_of_runs)], [1 for x in range(nums_of_runs)])#Plotting initial money at hand
+        plt.plot([x for x in range(nums_of_runs)], [average for x in range(nums_of_runs)])#Plotting average money for each strategy
+        plt.plot([num for num in range(nums_of_runs)], strat_list)
+        plt.subplot((431+i))
+
+        print(stat_maker(strat_list, nums_of_runs))
     plt.show()
 
-plot_result()
+#Seperated out the function for deciding the number of strategies from the plot function for more flexibility.
+def multiple_strategy_tester(nums_of_strategies, nums_of_runs, times_to_bet, initial_money, betsize_percentage):
+    strategies_list = []
+    for i in range(nums_of_strategies):
+        strategies_list.append(strategy_tester(nums_of_runs, times_to_bet, initial_money, (i+1) * betsize_percentage))
+    return strategies_list
 
+
+
+
+def main():
+    nums_of_runs = 100
+    times_to_bet = 1000
+    initial_money = 1
+    betsize_percentage = 0.02
+    nums_of_strategies = 9
+    strategies_list = multiple_strategy_tester(nums_of_strategies, nums_of_runs, times_to_bet, initial_money, betsize_percentage)
+    plot_result(nums_of_runs, strategies_list, nums_of_strategies)
+
+main()
