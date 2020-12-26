@@ -1,37 +1,15 @@
-## Welcome to GitHub Pages
+## Welcome to my humble first pages blogpost!
 
-You can use the [editor on GitHub](https://github.com/Snobben/gambling-strategy-simulator/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+In this project i have attempted to find the best strategy for betting in a dice game where you win if the sum of your six rolled dice are higher than your opponents sum. What tempted me to this project was the fact that this game was implemented in a online video game with a special rule; namely that the player who first posted the bet for anyone to accept, won if the sum of the dices were equal. I realized that the expected value for player one were in fact positive, and it got me interested in finding the best strategy such that one could potentially earn a practically infinite amount of money. But mostly im doing this project to practice my still very limited python skills, and for entering the world of github and pages with a cute and interesting problem. I do think my findings where somewhat interesting, even though they were quite predictible if one gives some thought to the problem.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Introduction to rules
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Expected value and some notes
 
-```markdown
-Syntax highlighted code block
+### Plots and analysis
 
-# Header 1
-## Header 2
-### Header 3
+### Methods for deciding the optimal strategy
 
-- Bulleted
-- List
+### Closing thoughts
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Snobben/gambling-strategy-simulator/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
