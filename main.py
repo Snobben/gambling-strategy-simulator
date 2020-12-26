@@ -1,4 +1,5 @@
 import random
+import math
 
 #Rolling the six die for each "player" and calculating their total score for the round.
 def dieroller():
@@ -66,9 +67,9 @@ def stat_maker(strategy_result_list, nums_of_runs):
     average = average / nums_of_runs
     variance = 0
     for element in strategy_result_list:
-        variance = variance + (average - element) * (average - element)
+        variance = variance + (average - element)**2
     variance = variance / nums_of_runs
-    standard_deviance = variance ** (1 / 2)
+    standard_deviance = math.sqrt(variance)
     sorted_list = sorted(strategy_result_list)
     lower_quartile_value = sorted_list[round(nums_of_runs * 0.25)]
     upper_quartile_value = sorted_list[round(nums_of_runs * 0.75)]
@@ -79,17 +80,21 @@ def stat_maker(strategy_result_list, nums_of_runs):
 
 #Plotting different strategies and plotting the end money sums against eachother and internally against the baseline/
 #initial money at hand to compare how efficient the strategies are.
-def plot_result(nums_of_runs, strategies_list, nums_of_strategies):
+def plot_result(nums_of_runs, strategies_list, nums_of_strategies, log_scale):
     from matplotlib import pyplot as plt
+    rowsandcols = plot_scaler(nums_of_strategies)
+    rows = rowsandcols[0]
+    columns = rowsandcols[1]
     for i in range(nums_of_strategies):
         strat_list = strategies_list[i]
         average = stat_maker(strat_list, nums_of_runs)[0]
 
-        plt.yscale("log")
+        plt.subplot(rows, columns, (i+1))
+        if log_scale:
+            plt.yscale("log")
         plt.plot([x for x in range(nums_of_runs)], [1 for x in range(nums_of_runs)])#Plotting initial money at hand
         plt.plot([x for x in range(nums_of_runs)], [average for x in range(nums_of_runs)])#Plotting average money for each strategy
         plt.plot([num for num in range(nums_of_runs)], strat_list)
-        plt.subplot((431+i))
 
         print(stat_maker(strat_list, nums_of_runs))
     plt.show()
@@ -101,16 +106,35 @@ def multiple_strategy_tester(nums_of_strategies, nums_of_runs, times_to_bet, ini
         strategies_list.append(strategy_tester(nums_of_runs, times_to_bet, initial_money, (i+1) * betsize_percentage))
     return strategies_list
 
-
-
+def plot_scaler(nums_of_strategies):
+    columns = math.floor(math.sqrt(nums_of_strategies))
+    if nums_of_strategies <= (columns**2 + columns) and nums_of_strategies > columns**2:
+        rows = columns + 1
+    elif nums_of_strategies > (columns**2 + columns):
+        columns += 1
+        rows = columns
+    else:
+        rows = columns
+    return ([rows, columns])
 
 def main():
     nums_of_runs = 100
-    times_to_bet = 1000
+    times_to_bet = 100
     initial_money = 1
-    betsize_percentage = 0.02
-    nums_of_strategies = 9
+    betsize_percentage = 0.01
+    nums_of_strategies = 15
+    to_plot = True
+    log_scale = True
     strategies_list = multiple_strategy_tester(nums_of_strategies, nums_of_runs, times_to_bet, initial_money, betsize_percentage)
-    plot_result(nums_of_runs, strategies_list, nums_of_strategies)
-
+    if to_plot:
+        plot_result(nums_of_runs, strategies_list, nums_of_strategies, log_scale)
 main()
+
+
+
+#Mål videre:
+#Gjøre litt matte
+#Gå nærmere inn på ca beste nivå
+#Undersøke effekten av times to bet
+#Lage stopp-funksjon.
+#Lage bloggpost
