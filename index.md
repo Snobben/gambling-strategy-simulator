@@ -20,7 +20,7 @@ Plot one inputs: 100 runs, 100 bets, 0.05 bet size increment, 9 strategies.
 In plot one, we can see how the strategies with increased betsizes have a higher average (the green line), but most of the betting runs is not profitable. Therefore, we can already deduce that higher betsizes are more risky. We can also see that there is not a single strategy who always avoids loss. In my next plot, i will therefore reduce the bet size increment increase number of bets.
 Plot two inputs:
 100 runs, 1000 bets, 0.01 bet size increment, 9 strategies.
-Here we can observe that the lowest risk strategies actually completely avoids loss. Unfortunate
+Here we can observe that the lowest risk strategies actually completely avoids loss. Unfortunately these low risk strategy also give us quite small returns, compared to the slightly more risky strategies. 
 ### Methods for deciding the optimal strategy
 
 ### Closing thoughts
