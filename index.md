@@ -23,5 +23,7 @@ Plot two inputs:
 Here we can observe that the lowest risk strategies actually completely avoids loss. Unfortunately these low risk strategy also give us quite small returns, compared to the slightly more risky strategies. 
 ### Methods for deciding the optimal strategy
 
+	![plot one](Plots and stats for gambling-strategy-simulator/plot-four.png)
+
 ### Closing thoughts
 
