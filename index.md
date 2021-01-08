@@ -29,7 +29,8 @@ Plotted with log scale = True for better visibility of the average and initial m
 ![Plot one log](https://raw.githubusercontent.com/Snobben/gambling-strategy-simulator/gh-pages/Plots%20and%20stats%20for%20gambling-strategy-simulator/plot1-gambling-strategy-simulator.png)  
 
 With log scale enabled, it becomes much clearer how the high risk strategies loses money most of the time, but really pays off sometimes. Below is the statistics for this simulations, in which we can spot that the average payoff is clearly higher for high risk strategies, but the lowest are also severely smaller:
-Numbers presented below are [average, variance, lower quartile, higher quartile, 95% low, minimum value, maximum value]  
+Numbers presented below are   
+[average, variance, lower quartile, higher quartile, 95% low, minimum value, maximum value]  
 [1.30, 0.73, 0.76, 1.68, 0.46, 0.34, 4.53]  
 [1.58, 2.19, 0.45, 1.82, 0.21, 0.06, 16.23]  
 [2.51, 5.34, 0.37, 1.69, 0.06, 0.03, 33.99]  
