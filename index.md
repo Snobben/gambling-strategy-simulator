@@ -57,7 +57,7 @@ Plot four:
 ### Methods for deciding the optimal strategy
 For a risk neutral agent, maximizing average return is the goal function. Therefore, a higher betsize will always be preferred, not assuming diminishing returns(?).
 For a risk-averse agent, the picture gets more complicated. It becomes a question of what level of risk one is willing to tolerate for certain returns. 
-I have in this project decided to simply mathematically formulate what i feel like best represents my risk tolerance facing this betting problem.
+I have in this project decided to simply mathematically formulate what i feel like best represents my risk tolerance facing this betting problem, which is to maximize the ninety five percent low return, such that one is pretty certain to get a decent return. 
 I will also, further down, try to implement a prospect theory value system for deciding the betting strategy.
 
 
