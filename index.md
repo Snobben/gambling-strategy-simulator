@@ -20,25 +20,25 @@ If you want to check out my code for a better understanding, please do. Here i w
 The first thing i was interested in was getting a feel for how the simulations behaved, and so i did not put too many bets and number of runs in the script to reduce run time.
 Plot one inputs: 100 runs, 100 bets, 0.05 bet size increment, 9 strategies.
 Plot one:
-![Plot one](https://raw.githubusercontent.com/Snobben/gambling-strategy-simulator/gh-pages/Plots%20and%20stats%20for%20gambling-strategy-simulator/plot1-logfalse.png)
+![Plot one](https://raw.githubusercontent.com/Snobben/gambling-strategy-simulator/gh-pages/Plots%20and%20stats%20for%20gambling-strategy-simulator/plot1-logfalse.png)  
 
 We already see how much riskier the higher betsize strategies are - Almost none of the runs with high betting sizes are profitable, although the few successful runs are very profitable. Since it is quite hard to see the average and initial money lines in this plot, i will plot the same and all consequent simulations using log scale to easier comprehend the plots. 
 
 
 Plotted with log scale = True for better visibility of the average and initial money lines:
-![Plot one log](https://raw.githubusercontent.com/Snobben/gambling-strategy-simulator/gh-pages/Plots%20and%20stats%20for%20gambling-strategy-simulator/plot1-gambling-strategy-simulator.png)
+![Plot one log](https://raw.githubusercontent.com/Snobben/gambling-strategy-simulator/gh-pages/Plots%20and%20stats%20for%20gambling-strategy-simulator/plot1-gambling-strategy-simulator.png)  
 
 With log scale enabled, it becomes much clearer how the high risk strategies loses money most of the time, but really pays off sometimes. Below is the statistics for this simulations, in which we can spot that the average payoff is clearly higher for high risk strategies, but the lowest are also severely smaller:
-Numbers presented below are [average, variance, lower quartile, higher quartile, 95% low, minimum value, maximum value]
-[1.30, 0.73, 0.76, 1.68, 0.46, 0.34, 4.53]
-[1.58, 2.19, 0.45, 1.82, 0.21, 0.06, 16.23]
-[2.51, 5.34, 0.37, 1.69, 0.06, 0.03, 33.99]
-[3.17, 8.71, 0.10, 2.74, 0.02, 0.0098, 68.44]
-[2.37, 6.59, 0.019, 1.87, 0.0025, 0.00093, 39.17]
-[24.52, 173.71, 0.013, 0.28, 0.00032, 9.67e-05, 1542.90]
-[6.35, 52.80, 0.00054, 0.087, 1.44e-05, 7.90e-07, 527.71]
-[0.67, 3.84, 5.29e-05, 0.019, 7.88e-07, 2.72e-08, 37.31]
-[3.22, 30.12, 3.41e-06, 0.0011, 7.24e-08, 8.54e-11, 302.52]
+Numbers presented below are [average, variance, lower quartile, higher quartile, 95% low, minimum value, maximum value]  
+[1.30, 0.73, 0.76, 1.68, 0.46, 0.34, 4.53]  
+[1.58, 2.19, 0.45, 1.82, 0.21, 0.06, 16.23]  
+[2.51, 5.34, 0.37, 1.69, 0.06, 0.03, 33.99]  
+[3.17, 8.71, 0.10, 2.74, 0.02, 0.0098, 68.44]  
+[2.37, 6.59, 0.019, 1.87, 0.0025, 0.00093, 39.17]  
+[24.52, 173.71, 0.013, 0.28, 0.00032, 9.67e-05, 1542.90]  
+[6.35, 52.80, 0.00054, 0.087, 1.44e-05, 7.90e-07, 527.71]  
+[0.67, 3.84, 5.29e-05, 0.019, 7.88e-07, 2.72e-08, 37.31]  
+[3.22, 30.12, 3.41e-06, 0.0011, 7.24e-08, 8.54e-11, 302.52]  
 
 Plot two inputs:
 100 runs, 1000 bets, 0.01 bet size increment, 9 strategies. By increasing the amount of bets, we expect a higher return on all strategies since the amount invested is higher.
