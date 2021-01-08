@@ -21,12 +21,18 @@ The first thing i was interested in was getting a feel for how the simulations b
 Plot one inputs: 100 runs, 100 bets, 0.05 bet size increment, 9 strategies.
 Plot one:
 ![Plot one](https://raw.githubusercontent.com/Snobben/gambling-strategy-simulator/gh-pages/Plots%20and%20stats%20for%20gambling-strategy-simulator/plot1-logfalse.png)
-In plot one, we can see how the strategies with increased betsizes have a higher average (the green line), but most of the betting runs is not profitable. Therefore, we can already deduce that higher betsizes are more risky. We can also see that there is not a single strategy who always avoids loss. In my next plot, i will therefore reduce the bet size increment increase number of bets.
-Plotted with log scale = True:
+
+We already see how much riskier the higher betsize strategies are - Almost none of the runs with high betting sizes are profitable, although the few successful runs are very profitable. Since it is quite hard to see the average and initial money lines in this plot, i will plot the same and all consequent simulations using log scale to easier comprehend the plots. 
+
+
+Plotted with log scale = True for better visibility of the average and initial money lines:
 ![Plot one log](https://raw.githubusercontent.com/Snobben/gambling-strategy-simulator/gh-pages/Plots%20and%20stats%20for%20gambling-strategy-simulator/plot1-gambling-strategy-simulator.png)
+
+With log scale enabled, it becomes much clearer how the high risk strategies loses money most of the time, but really pays off sometimes. Below is the statistics for this simulations, in which we can spot that the average payoff is clearly higher for high risk strategies, but the lowest are also severely smaller.
+
 Plot two inputs:
-100 runs, 1000 bets, 0.01 bet size increment, 9 strategies.
-Here we can observe that the lowest risk strategies actually completely avoids loss. Unfortunately these low risk strategy also give us quite small returns, compared to the slightly more risky strategies. 
+100 runs, 1000 bets, 0.01 bet size increment, 9 strategies. By increasing the amount of bets, we expect a higher return on all strategies since the amount invested is higher.
+Here we can observe that the lowest risk strategies actually almost avoids loss. Unfortunately these low risk strategy also give us quite small returns, compared to the slightly more risky strategies. 
 Plot two:
 ![Plot two](https://raw.githubusercontent.com/Snobben/gambling-strategy-simulator/gh-pages/Plots%20and%20stats%20for%20gambling-strategy-simulator/plot2log.png)
 Plot three inputs:
