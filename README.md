@@ -1,4 +1,4 @@
-Gambling-strategy-simulator
+### Gambling-strategy-simulator
 Was playing an  online game with gambling in it where i noticed the expected value for inserting bets was positive; 
 The rules were as following: 
 - One player decides an amount to bet.
