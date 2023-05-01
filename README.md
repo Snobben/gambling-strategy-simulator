@@ -9,6 +9,6 @@ The rules were as following:
 
 My aspiration for this project is to try to decide the optimal bet size relative to the the money at hand, trying to get the highest "stable return",
 meaning not only maximizing the average expected return but also considering risk.
-I'm sure this problem could be solved formally with math, and please do notice me if you manage so, but i decided to use monte carlo simulations,
+I'm sure this problem could be solved formally with math (ref kelly criteria as i became aware of later), but i decided to use monte carlo simulations
 to at least get a decent estimate/idea of what bet percentage is optimal.
 As my plots show (and probably as expected), a bet size too small (<0.01) gives unsatisfying returns, and too big (>0.10) gives very unlikely but potentially exponential returns.
